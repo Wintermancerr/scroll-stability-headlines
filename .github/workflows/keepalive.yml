@@ -1,0 +1,23 @@
+# Keeps the scheduled refresh switched on (GitHub disables schedules after 60 quiet days).
+name: Keep alive
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          date -u +%Y-%m-%dT%H:%M:%SZ > keepalive.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add keepalive.txt
+          git commit -m "Keep the headline refresh schedule active"
+          git push

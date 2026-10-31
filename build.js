@@ -4,9 +4,18 @@ const fs = require("fs");
 const path = require("path");
 
 var KEEP_HOURS = 72;
-var MAX_PER_OUTLET = 80;
+// Kept modest so a few prolific outlets can't dominate what counts as "covered".
+var MAX_PER_OUTLET = 40;
 var FRESH_HOURS = 6;
 var MIN_OUTLETS_ESTABLISHED = 3;
+// Past this, the headline list is too old to say anything about what's in the news.
+var STALE_HOURS = 6;
+
+// Only plain web links ever leave this file: a tampered feed or index could otherwise slip in
+// javascript:, data: or intent: links. Checked when building the index and again when matching.
+function isSafeUrl(u) {
+  return typeof u === "string" && /^https:\/\/[^\s"'<>\\]+$/i.test(u);
+}
 
 // ---------- RSS / Atom parsing (regex based so it also runs in service workers) ----------
 
@@ -73,8 +82,9 @@ function buildIndex(feedsConfig, fetchText, now) {
     results.forEach(function (r) {
       if (r.error) errors.push(r.error);
       r.items.forEach(function (it) {
-        var t = it.time || now;
-        if (t < cutoff || seen[it.link]) return;
+        // Undated items would look brand new on every rebuild, forever; skip them.
+        if (!it.time || it.time < cutoff || it.time > now + 3600e3 || seen[it.link] || !isSafeUrl(it.link)) return;
+        var t = it.time;
         perOutlet[r.id] = (perOutlet[r.id] || 0) + 1;
         if (perOutlet[r.id] > MAX_PER_OUTLET) return;
         seen[it.link] = 1;
