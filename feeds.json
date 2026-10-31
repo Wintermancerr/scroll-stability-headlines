@@ -1,0 +1,224 @@
+{
+  "about": "Public RSS feeds from outlets across the spectrum and around the world. Only headlines, links and times are used; articles are never copied. 'lean' is intentionally empty until you add ratings you are licensed to use (see LAUNCH.md).",
+  "outlets": [
+    {
+      "id": "bbc",
+      "name": "BBC News",
+      "feeds": [
+        "https://feeds.bbci.co.uk/news/rss.xml",
+        "https://feeds.bbci.co.uk/news/world/rss.xml"
+      ]
+    },
+    {
+      "id": "npr",
+      "name": "NPR",
+      "feeds": [
+        "https://feeds.npr.org/1001/rss.xml"
+      ]
+    },
+    {
+      "id": "nyt",
+      "name": "The New York Times",
+      "feeds": [
+        "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+      ]
+    },
+    {
+      "id": "guardian",
+      "name": "The Guardian",
+      "feeds": [
+        "https://www.theguardian.com/world/rss",
+        "https://www.theguardian.com/us-news/rss"
+      ]
+    },
+    {
+      "id": "fox",
+      "name": "Fox News",
+      "feeds": [
+        "https://moxie.foxnews.com/google-publisher/latest.xml"
+      ]
+    },
+    {
+      "id": "aljazeera",
+      "name": "Al Jazeera",
+      "feeds": [
+        "https://www.aljazeera.com/xml/rss/all.xml"
+      ]
+    },
+    {
+      "id": "thehill",
+      "name": "The Hill",
+      "feeds": [
+        "https://thehill.com/feed/"
+      ]
+    },
+    {
+      "id": "politico",
+      "name": "Politico",
+      "feeds": [
+        "https://rss.politico.com/politics-news.xml"
+      ]
+    },
+    {
+      "id": "nypost",
+      "name": "New York Post",
+      "feeds": [
+        "https://nypost.com/feed/"
+      ]
+    },
+    {
+      "id": "breitbart",
+      "name": "Breitbart",
+      "feeds": [
+        "https://feeds.feedburner.com/breitbart"
+      ]
+    },
+    {
+      "id": "cbs",
+      "name": "CBS News",
+      "feeds": [
+        "https://www.cbsnews.com/latest/rss/main"
+      ]
+    },
+    {
+      "id": "abc",
+      "name": "ABC News",
+      "feeds": [
+        "https://feeds.abcnews.com/abcnews/topstories"
+      ]
+    },
+    {
+      "id": "nbc",
+      "name": "NBC News",
+      "feeds": [
+        "https://feeds.nbcnews.com/nbcnews/public/news"
+      ]
+    },
+    {
+      "id": "wapo",
+      "name": "The Washington Post",
+      "feeds": [
+        "https://feeds.washingtonpost.com/rss/national"
+      ]
+    },
+    {
+      "id": "newsmax",
+      "name": "Newsmax",
+      "feeds": [
+        "https://www.newsmax.com/rss/Newsfront/16/"
+      ]
+    },
+    {
+      "id": "nationalreview",
+      "name": "National Review",
+      "feeds": [
+        "https://www.nationalreview.com/feed/"
+      ]
+    },
+    {
+      "id": "federalist",
+      "name": "The Federalist",
+      "feeds": [
+        "https://thefederalist.com/feed/"
+      ]
+    },
+    {
+      "id": "dailycaller",
+      "name": "The Daily Caller",
+      "feeds": [
+        "https://dailycaller.com/feed/"
+      ]
+    },
+    {
+      "id": "washtimes",
+      "name": "The Washington Times",
+      "feeds": [
+        "https://www.washingtontimes.com/rss/headlines/news/"
+      ]
+    },
+    {
+      "id": "reason",
+      "name": "Reason",
+      "feeds": [
+        "https://reason.com/feed/"
+      ]
+    },
+    {
+      "id": "vox",
+      "name": "Vox",
+      "feeds": [
+        "https://www.vox.com/rss/index.xml"
+      ]
+    },
+    {
+      "id": "motherjones",
+      "name": "Mother Jones",
+      "feeds": [
+        "https://www.motherjones.com/feed/"
+      ]
+    },
+    {
+      "id": "intercept",
+      "name": "The Intercept",
+      "feeds": [
+        "https://theintercept.com/feed/?rss"
+      ]
+    },
+    {
+      "id": "axios",
+      "name": "Axios",
+      "feeds": [
+        "https://api.axios.com/feed/"
+      ]
+    },
+    {
+      "id": "pbs",
+      "name": "PBS NewsHour",
+      "feeds": [
+        "https://www.pbs.org/newshour/feeds/rss/headlines"
+      ]
+    },
+    {
+      "id": "cnbc",
+      "name": "CNBC",
+      "feeds": [
+        "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+      ]
+    },
+    {
+      "id": "france24",
+      "name": "France 24",
+      "feeds": [
+        "https://www.france24.com/en/rss"
+      ]
+    },
+    {
+      "id": "dw",
+      "name": "DW",
+      "feeds": [
+        "https://rss.dw.com/rdf/rss-en-all"
+      ]
+    },
+    {
+      "id": "cbc",
+      "name": "CBC News",
+      "feeds": [
+        "https://www.cbc.ca/webfeed/rss/rss-topstories"
+      ]
+    },
+    {
+      "id": "sky",
+      "name": "Sky News",
+      "feeds": [
+        "https://feeds.skynews.com/feeds/rss/world.xml"
+      ]
+    },
+    {
+      "id": "independent",
+      "name": "The Independent",
+      "feeds": [
+        "https://www.independent.co.uk/news/rss"
+      ]
+    }
+  ]
+}
