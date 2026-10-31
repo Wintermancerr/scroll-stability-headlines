@@ -1,0 +1,24 @@
+# Fails, which makes GitHub email the owner, if the published headline index is more than 2 hours old.
+name: Headline freshness check
+
+on:
+  schedule:
+    - cron: "41 * * * *"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check the live index is fresh
+        run: |
+          node -e '
+          const url = "https://" + process.env.GITHUB_REPOSITORY_OWNER.toLowerCase() + ".github.io/" + process.env.GITHUB_REPOSITORY.split("/")[1] + "/news-index.json";
+          fetch(url, { cache: "no-store" }).then((r) => r.json()).then((i) => {
+            const hours = (Date.now() - Date.parse(i.built)) / 3600e3;
+            console.log(url, i.items.length, "headlines, built", hours.toFixed(2), "hours ago");
+            if (!(hours < 2) || i.items.length < 200) { console.error("STALE OR THIN INDEX"); process.exit(1); }
+          }).catch((e) => { console.error(e); process.exit(1); });'
