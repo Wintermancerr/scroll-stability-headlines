@@ -95,13 +95,6 @@
       ]
     },
     {
-      "id": "wapo",
-      "name": "The Washington Post",
-      "feeds": [
-        "https://feeds.washingtonpost.com/rss/national"
-      ]
-    },
-    {
       "id": "newsmax",
       "name": "Newsmax",
       "feeds": [
